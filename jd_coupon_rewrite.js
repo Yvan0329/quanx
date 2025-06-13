@@ -4,21 +4,17 @@ try {
   let obj = JSON.parse(body);
 
   if (obj?.data) {
-    // 解锁主提示弹窗
-    obj.data.showExpandHintDialog = true;
-    obj.data.receivedCoupon = false;
-
     // 解锁所有券
     if (Array.isArray(obj.data.couponList)) {
       obj.data.couponList.forEach(coupon => {
         coupon.receiveStatus = 1;  // 可领取
-        coupon.status = 0;         // 状态正常
+        // coupon.status = 0;         // 状态正常
         coupon.couponId = coupon.couponId || "fake_coupon_id_" + Math.random().toString(36).substring(2, 10);
-        coupon.maxClaimLimit = 99; // 最多可领次数
-        coupon.couponStyle = 1;    // 显示样式变换
-        coupon.discount = coupon.discount || "50";
-        coupon.quota = coupon.quota || "100";
-        coupon.maxDiscount = coupon.maxDiscount || "1000";
+        // coupon.maxClaimLimit = 99; // 最多可领次数
+        // coupon.couponStyle = 1;    // 显示样式变换
+        // coupon.discount = coupon.discount || "50";
+        // coupon.quota = coupon.quota || "100";
+        // coupon.maxDiscount = coupon.maxDiscount || "1000";
       });
     }
 
