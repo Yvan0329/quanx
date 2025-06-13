@@ -19,8 +19,8 @@ try {
     }
 
     // 可选修改活动剩余时间，模拟未过期
-    obj.data.activityLeftTime = 999999999;
-    obj.data.baseCouponEndLeftTime = 99999999;
+    // obj.data.activityLeftTime = 999999999;
+    // obj.data.baseCouponEndLeftTime = 99999999;
   }
 
   body = JSON.stringify(obj);
