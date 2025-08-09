@@ -1,21 +1,15 @@
 /*
- * 只修改 personReview
+ * 强制修改响应体为指定内容
  */
-console.log("=== 命中了 viewRcfsqrxx 接口 ===");
 
-let body = $response.body;
-
-try {
-  let obj = JSON.parse(body);
-
-  if (obj?.data) {
-    obj.data.personReview = 0; // 改成通过状态
+const newBody = JSON.stringify({
+  msg: "没有资格，需要填写申请",
+  code: 0,
+  data: {
+    status: 0
   }
+});
 
-  body = JSON.stringify(obj);
-  console.log("=== 已将 personReview 改为 1 ===");
-} catch (e) {
-  console.log("修改 JSON 出错:", e);
-}
+console.log("=== 已重写响应为指定内容 ===");
 
-$done({ body });
+$done({ body: newBody });
