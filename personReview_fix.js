@@ -1,6 +1,7 @@
 /*
  * 只修改 personReview
  */
+console.log("=== 命中了 viewRcfsqrxx 接口 ===");
 
 let body = $response.body;
 
