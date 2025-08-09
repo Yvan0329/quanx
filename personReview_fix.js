@@ -1,6 +1,6 @@
 /*
- * personReview 修改脚本
- * 把 personReview=-2 改成 0
+ * personReview 修改脚本 for QuanX
+ * 把 personReview=-2 改成 0，并将 spjg 改成“人工复核审核合格”
  */
 
 let body = $response.body;
@@ -12,9 +12,12 @@ try {
     obj.data.personReview = 0; // 改成通过状态
   }
 
-  // 保险起见，如果 spjg 包含“不合格”，一起改掉
   if (obj?.data?.spjg && obj.data.spjg.includes("不合格")) {
     obj.data.spjg = "人工复核审核合格";
+  }
+
+  if (obj?.data?.spyj && obj.data.spyj.includes("不符合申报条件")) {
+    obj.data.spyj = "符合申报条件。";
   }
 
   body = JSON.stringify(obj);
