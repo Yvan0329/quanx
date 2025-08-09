@@ -8,7 +8,7 @@ try {
   let obj = JSON.parse(body);
 
   if (obj?.data) {
-    obj.data.personReview = 0; // 改成通过状态
+    obj.data.personReview = -1; // 改成通过状态
   }
 
   body = JSON.stringify(obj);
