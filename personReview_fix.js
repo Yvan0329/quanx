@@ -3,10 +3,10 @@
  */
 
 const newBody = JSON.stringify({
-  msg: "没有资格，需要填写申请",
+  msg: "重新填写申请",
   code: 0,
   data: {
-    status: 0
+    status: -1
   }
 });
 
