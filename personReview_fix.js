@@ -6,7 +6,7 @@ const newBody = JSON.stringify({
   msg: "重新填写申请",
   code: 0,
   data: {
-    status: -1
+    status: 1
   }
 });
 
